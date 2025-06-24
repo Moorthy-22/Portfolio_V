@@ -1,0 +1,72 @@
+body, .layout-wrapper {
+  background: #f7faff !important;
+}
+
+/* Container setup */
+.main-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0; /* Remove padding so sidebar fits flush */
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden;    /* ⬅️ Prevents side scroll */
+  justify-content: center; /* ⬅️ Center layout horizontally */
+}
+
+/* Sidebar */
+app-sidebar {
+  width: 280px;
+  height: 100vh;
+  background-color: #f7faff !important;
+  border-radius: 0; /* Remove border-radius for flush fit */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  max-width: 1000px;  /* ⬅️ Constrain width */
+  margin-left: 40px;  /* ⬅️ Space between sidebar and content */
+  padding: 40px;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Right corner menu */
+.right-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  background-color: #f2f2f2;
+  padding: 6px 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+/* Menu links */
+.right-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.right-menu a:hover,
+.right-menu a.active {
+  background-color: #007bff;
+  color: #ffffff;
+}

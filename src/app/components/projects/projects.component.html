@@ -1,0 +1,26 @@
+<section class="projects-section">
+  <h2>My Projects</h2>
+
+  <!-- Category Tabs -->
+  <div class="category-tabs">
+    <button class="tab" *ngFor="let category of projectCategories; let i = index" [class.active]="i === selectedCategoryIndex" (click)="setCategory(i)">
+      <span class="tab-icon">{{ category.icon }}</span> {{ category.name }}
+    </button>
+  </div>
+
+  <div class="category-block">
+    <h3 class="category-heading">{{ selectedCategory.icon }} {{ selectedCategory.name }}</h3>
+    <div class="projects-grid">
+      <div *ngFor="let project of selectedCategory.projects" class="project-card modern-card">
+        <div class="project-header">
+          <h4>{{ project.title }}</h4>
+          <span class="project-emoji">{{ project.emoji }}</span>
+        </div>
+        <p>{{ project.description }}</p>
+        <div class="tech-badges">
+          <span *ngFor="let tech of project.tech.split(',')" class="tech-badge">{{ tech.trim() }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

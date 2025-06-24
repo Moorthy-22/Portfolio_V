@@ -1,0 +1,21 @@
+<!-- Centered wrapper for the whole layout -->
+<div class="layout-wrapper">
+  <div class="main-container">
+    <!-- Left Sidebar -->
+    <app-sidebar></app-sidebar>
+
+    <!-- Main content area -->
+    <div class="main-content">
+      <!-- Right-corner horizontal menu -->
+      <div class="right-menu">
+        <a routerLink="/about" routerLinkActive="active">About</a>
+        <a routerLink="/cv" routerLinkActive="active">Resume</a>
+        <a routerLink="/projects" routerLinkActive="active">Projects</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </div>
+
+      <!-- Page content -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

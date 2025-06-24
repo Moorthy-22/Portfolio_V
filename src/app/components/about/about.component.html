@@ -1,0 +1,17 @@
+<section class="about-wrapper">
+  <div class="about-intro">
+    <h2 class="section-title">About Me</h2>
+    <p class="about-summary">
+      Hey there! I'm <strong>Vinayaga Moorthi</strong> — a passionate Full Stack Developer who loves working with databases.<br>
+      I enjoy taking complex data problems and turning them into simple, beautiful solutions that actually work.
+    </p>
+    <div class="about-divider"></div>
+  </div>
+
+  <div class="what-i-do-grid">
+    <div class="card glass-card" *ngFor="let card of cardItems">
+      <h3><span class="card-icon">{{ card.icon }}</span> {{ card.title }}</h3>
+      <p>{{ card.description }}</p>
+    </div>
+  </div>
+</section>
