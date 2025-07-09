@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; URL='/Portfolio/'" />
-    <title>Redirecting…</title>
-  </head>
-  <body>
-    <script>
-      window.location.replace("/Portfolio/");
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    // Redirect all requests to index.html for Angular routing
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var hash = window.location.hash;
+    var newUrl = '/Portfolio/' + 'index.html' + '?redirect=' + encodeURIComponent(path + search + hash);
+    window.location.replace(newUrl);
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
 </html>
