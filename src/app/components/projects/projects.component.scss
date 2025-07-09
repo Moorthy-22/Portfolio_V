@@ -176,3 +176,18 @@
     gap: 8px;
   }
 }
+
+@media (max-width: 600px) {
+  :host {
+    display: block;
+    padding: 12px 0;
+  }
+  .project-card, .project {
+    width: 100% !important;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+}

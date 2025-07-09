@@ -292,3 +292,17 @@
     margin-right: 10px;
   }
 }
+
+@media (max-width: 600px) {
+  :host {
+    display: block;
+    padding: 12px 0;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+}

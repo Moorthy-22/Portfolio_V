@@ -1,7 +1,7 @@
 .sidebar {
   width: 100%;
   padding: 32px 24px;
-  background: #f7faff !important; /* force single solid color */
+  background: #f7faff !important;
   border-right: 1px solid #e5e5e5;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
@@ -11,31 +11,7 @@
   box-shadow: 0 2px 24px rgba(79, 140, 255, 0.07);
 }
 
-// Collapsible menu button for mobile
-.sidebar-toggle {
-  display: none;
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  background: rgba(255,255,255,0.7);
-  border: none;
-  border-radius: 8px;
-  padding: 8px 10px;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.10);
-}
-.toggle-bar {
-  display: block;
-  width: 24px;
-  height: 3px;
-  background: #4f8cff;
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-
-// Glassmorphism profile image
+/* Avatar */
 .profile-pic-glass {
   width: 130px;
   height: 130px;
@@ -46,86 +22,63 @@
   border: 4px solid #fff;
   background: rgba(255,255,255,0.35);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
-}
-.profile-pic-glass img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-.profile-pic-glass:hover img {
-  transform: scale(1.05);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 }
 
+/* Name and Role */
 .name {
   font-size: 22px;
   font-weight: 700;
-  margin-top: 8px;
+  margin-top: 6px;
   color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.roles {
+  margin-bottom: 16px;
 }
 
 .role {
   font-size: 15px;
   color: #666;
   line-height: 1.4;
-  margin-bottom: 18px;
+  margin: 2px 0;
 }
 
-.theme-switcher {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 18px;
-  cursor: pointer;
-  background: rgba(255,255,255,0.7);
-  border-radius: 16px;
-  padding: 6px 16px;
-  font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.08);
-  transition: background 0.2s;
-}
-.theme-switcher:hover {
-  background: #e3e9f7;
-}
-.theme-icon {
-  font-size: 1.2em;
-}
-.theme-label {
-  font-weight: 500;
-  color: #4f8cff;
-}
-
+/* Contact */
 .info {
   font-size: 15px;
   margin-bottom: 20px;
+
   p {
     margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+
     a {
       color: #007acc;
       text-decoration: none;
       font-weight: 500;
+
       &:hover {
         text-decoration: underline;
       }
     }
-    lucide-icon {
-      color: #007acc;
-      vertical-align: middle;
-    }
   }
 }
 
+/* Socials */
 .socials {
   display: flex;
   flex-direction: column;
@@ -133,6 +86,7 @@
   align-items: center;
   margin-bottom: 10px;
 }
+
 .social-link {
   display: flex;
   align-items: center;
@@ -141,40 +95,92 @@
   font-weight: 600;
   text-decoration: none;
   font-size: 15px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 12px;
   padding: 8px 18px;
   transition: background 0.2s, color 0.2s;
   box-shadow: 0 2px 8px rgba(79, 140, 255, 0.08);
-}
-.social-link:hover {
-  background: #e0f0ff;
-  color: #005792;
-}
-.social-link.disabled {
-  color: #999;
-  background: #f3f3f3;
-  cursor: not-allowed;
-  font-style: italic;
+
+  &:hover {
+    background: #e0f0ff;
+    color: #005792;
+  }
 }
 
-@media (max-width: 700px) {
+/* MOBILE STYLES - Sidebar always visible at top */
+@media (max-width: 768px) {
   .sidebar {
-    min-height: auto;
-    padding: 18px 6px;
-    border-radius: 0;
+    position: relative;      /* ✅ Normal document flow */
+    width: 100%;            /* ✅ Full width */
+    min-height: auto;       /* ✅ Auto height */
+    padding: 20px 16px;     /* ✅ Reduced padding for mobile */
+    background: #f7faff !important;
+    border-right: none;     /* ✅ Remove right border */
+    border-bottom: 1px solid #e5e5e5; /* ✅ Add bottom border */
+    box-shadow: 0 2px 16px rgba(79, 140, 255, 0.13);
+    border-radius: 0 0 12px 12px; /* ✅ Rounded bottom corners */
+    margin-bottom: 0;
   }
-  .sidebar-toggle {
-    display: block;
-  }
+
   .profile-pic-glass {
-    width: 80px;
+    width: 80px;            /* ✅ Smaller avatar for mobile */
     height: 80px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(79, 140, 255, 0.10);
   }
+
   .name {
-    font-size: 18px;
+    font-size: 18px;        /* ✅ Smaller font for mobile */
+    margin-bottom: 4px;
+    margin-top: 4px;
   }
+
+  .roles {
+    margin-bottom: 12px;
+  }
+
   .role {
-    font-size: 13px;
+    font-size: 13px;        /* ✅ Smaller role text */
+    margin: 2px 0;
+    color: #4f8cff;
+    font-weight: 500;
   }
+
+  .info {
+    font-size: 13px;        /* ✅ Smaller info text */
+    margin-bottom: 16px;
+    
+    p {
+      margin: 8px 0;
+      gap: 6px;
+    }
+  }
+
+  .socials {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .social-link {
+    font-size: 13px;        /* ✅ Smaller social links */
+    padding: 8px 16px;
+    border-radius: 10px;
+    
+    &:active {
+      background: #e0f0ff;
+      color: #005792;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+/* Make sidebar content scrollable if it overflows */
+.sidebar {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }

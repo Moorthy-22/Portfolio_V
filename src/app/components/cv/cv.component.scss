@@ -157,3 +157,19 @@
     margin-top: 0;
   }
 }
+
+@media (max-width: 600px) {
+  :host {
+    display: block;
+    padding: 12px 0;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  .cv-section {
+    margin-bottom: 16px;
+  }
+  a {
+    word-break: break-all;
+  }
+}

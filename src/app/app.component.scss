@@ -17,15 +17,11 @@ body, .layout-wrapper {
 
 /* Sidebar */
 app-sidebar {
-  width: 280px;
-  height: 100vh;
-  background-color: #f7faff !important;
-  border-radius: 0; /* Remove border-radius for flush fit */
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
-  margin: 0;
-  padding: 0;
+  /* Remove all visual styles from host. Let .sidebar handle it. */
   display: flex;
   flex-direction: column;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Main content */
@@ -69,4 +65,51 @@ app-sidebar {
 .right-menu a.active {
   background-color: #007bff;
   color: #ffffff;
+}
+
+/* MOBILE STYLES - Single consolidated media query */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* ✅ Stack vertically - sidebar on top */
+    position: static;
+    overflow-x: visible;
+    width: 100%;
+  }
+  
+  app-sidebar {
+    position: relative;     /* ✅ Normal document flow - appears at top */
+    width: 100%;           /* ✅ Full width */
+    max-width: none;       /* ✅ Remove width constraint */
+    height: auto;          /* ✅ Auto height instead of 100vh */
+    box-shadow: 0 2px 16px rgba(79, 140, 255, 0.13);
+    background: #f7faff;
+    border-radius: 0;
+    margin: 0 auto;        /* ✅ Center horizontally */
+    padding: 20px 0;       /* ✅ Add some padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* ✅ Center content inside sidebar */
+  }
+  
+  .main-content {
+    margin-left: 0;        /* ✅ Remove left margin */
+    padding: 18px 16px 24px 16px; /* ✅ Better mobile padding */
+    max-width: 100vw;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.03);
+  }
+  
+  /* Mobile right menu adjustments */
+  .right-menu {
+    position: relative;     /* ✅ Change from absolute to relative */
+    top: auto;
+    right: auto;
+    display: flex;
+    justify-content: center; /* ✅ Center the menu */
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
 }

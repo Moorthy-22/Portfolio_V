@@ -1,17 +1,27 @@
 <!-- Centered wrapper for the whole layout -->
 <div class="layout-wrapper">
-  <div class="main-container">
-    <!-- Left Sidebar -->
+
+  <!-- Sidebar appears at top on mobile -->
+  <div *ngIf="isMobile" class="mobile-sidebar">
     <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="main-container">
+    
+    <!-- Sidebar on left for desktop -->
+    <ng-container *ngIf="!isMobile">
+      <app-sidebar></app-sidebar>
+    </ng-container>
 
     <!-- Main content area -->
     <div class="main-content">
+
       <!-- Right-corner horizontal menu -->
       <div class="right-menu">
-        <a routerLink="/about" routerLinkActive="active">About</a>
-        <a routerLink="/cv" routerLinkActive="active">Resume</a>
-        <a routerLink="/projects" routerLinkActive="active">Projects</a>
-        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+        <a routerLink="/about" routerLinkActive="active" (click)="onMenuClick()">About</a>
+        <a routerLink="/cv" routerLinkActive="active" (click)="onMenuClick()">Resume</a>
+        <a routerLink="/projects" routerLinkActive="active" (click)="onMenuClick()">Projects</a>
+        <a routerLink="/contact" routerLinkActive="active" (click)="onMenuClick()">Contact</a>
       </div>
 
       <!-- Page content -->

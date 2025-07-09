@@ -2,15 +2,21 @@
   <div class="about-intro">
     <h2 class="section-title">About Me</h2>
     <p class="about-summary">
-      Hey there! I'm <strong>Vinayaga Moorthi</strong> — a passionate Full Stack Developer who loves working with databases.<br>
-      I enjoy taking complex data problems and turning them into simple, beautiful solutions that actually work.
+      Greetings and welcome! I'm <strong>Vinayaga Moorthi</strong>, your dedicated <strong>SQL Developer</strong> and <strong>Data Analyst</strong> with a passion for turning raw data into powerful business insights.
+      <br /><br />
+      With a strong foundation and hands-on experience, I specialize in building scalable database solutions, optimizing complex queries, and uncovering the stories hidden in your data.
+      <br /><br />
+      Let's transform information into impact — together.
     </p>
     <div class="about-divider"></div>
   </div>
 
   <div class="what-i-do-grid">
     <div class="card glass-card" *ngFor="let card of cardItems">
-      <h3><span class="card-icon">{{ card.icon }}</span> {{ card.title }}</h3>
+      <h3>
+        <span class="card-icon">{{ card.icon }}</span>
+        {{ card.title }}
+      </h3>
       <p>{{ card.description }}</p>
     </div>
   </div>
